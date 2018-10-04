@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Checks if a file (1st param) is updated in the source location (url specified by 2nd param) and downloads if yes
+
+if test -e "$1"; then
+  zflag="-z $1"
+else zflag=
+fi
+curl -o "$1" $zflag "$2"
